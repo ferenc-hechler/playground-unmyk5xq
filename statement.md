@@ -7,7 +7,7 @@ Zum Beispiel hat `2025` die Quersumme `9`, da `2+0+2+5 = 9` ist.
 
 Implementiere die Methode loesung(N) im Code und Klicke anschliessend den "Run" Button unten um die Testfälle laufen zu lassen.
 
-**Bedingungen:**
+**Bedingungen:**  
 0 ≤ N ≤ 1000000000
 
 ```python runnable
