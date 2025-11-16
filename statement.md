@@ -103,11 +103,57 @@ public class Main {
 
 ```C runnable
 #include <stdio.h>
+#include <stdlib.h>
 
-int main() {
-	printf("Hello World!");
+static int loesung(unsigned N) {
+    /* ----------------------------------- */
+    /* - TODO: FÜGE DEINEN CODE HIER EIN - */
+    /* ----------------------------------- */
+    unsigned result = N;
+
+    // TODO begin remove
+    result = 0;
+    unsigned val = N;
+    while (val > 0) {
+        result += val % 10;
+        val /= 10;
+    }
+    // TODO end remove
+
+
+    return result;
 }
 
+
+/* ------------------------------------------------------ */
+/* ---------- AB HIER DEN CODE NICHT VERÄNDERN ---------- */
+/* ------------------------------------------------------ */
+
+int main(void) {
+    struct test {
+        unsigned input;
+        unsigned check;
+    };
+    struct test tests[] = {
+        {12, 762299093}, {56, 1049489039}, {2025, 909320628},
+        {8, 462648444}, {0, 1804289383}, {9999, 687175592}, {17112025, 796206383}
+    };
+    for (int i = 0; i < sizeof(tests) / sizeof(struct test); i++) {
+         unsigned N = tests[i].input;
+         unsigned check = tests[i].check;
+         unsigned result = loesung(N);
+         srand(tests[i].input + result);
+         unsigned chk = rand();
+         if (chk == check) {
+             printf("RICHTIG: Die Quersumme von %u ist %u\n", N, result);
+         } else {
+             // printf("FALSCH: Die Quersumme von %u ist nicht %u (%u)\n", N, result, chk);
+             printf("FALSCH: Die Quersumme von %u ist nicht %u (%u)\n", N, result, chk);
+             return 1;
+         }
+    }
+    return 0;
+}
 ```
 
 ## C++ (Work in Progress)
