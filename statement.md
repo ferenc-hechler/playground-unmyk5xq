@@ -98,3 +98,14 @@ public class Main {
   }
 }
 ```
+
+## C
+
+```C runnable
+#include <stdio.h>
+
+int main() {
+	printf("Hello World!");
+}
+
+```
