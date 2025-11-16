@@ -130,18 +130,18 @@ int main(void) {
         {8, 462648444}, {0, 1804289383}, {9999, 687175592}, {17112025, 796206383}
     };
     for (int i = 0; i < sizeof(tests) / sizeof(struct test); i++) {
-         unsigned N = tests[i].input;
-         unsigned check = tests[i].check;
-         unsigned result = loesung(N);
-         srand(tests[i].input + result);
-         unsigned chk = rand();
-         if (chk == check) {
-             printf("RICHTIG: Die Quersumme von %u ist %u\n", N, result);
-         } else {
-             // printf("FALSCH: Die Quersumme von %u ist nicht %u (%u)\n", N, result, chk);
-             printf("FALSCH: Die Quersumme von %u ist nicht %u\n", N, result);
-             return 1;
-         }
+        unsigned N = tests[i].input;
+        unsigned check = tests[i].check;
+        unsigned result = loesung(N);
+        srand(tests[i].input + result);
+        unsigned chk = rand();
+        if (chk == check) {
+            printf("RICHTIG: Die Quersumme von %u ist %u\n", N, result);
+        } else {
+            // fprintf(stderr, "FALSCH: Die Quersumme von %u ist nicht %u (%u)\n", N, result, chk);
+            fprintf(stderr, "FALSCH: Die Quersumme von %u ist nicht %u\n", N, result);
+            return 1;
+        }
     }
 	time_t now = time(NULL);
 	now += 60 * 60;
