@@ -56,37 +56,42 @@ print(f"ERFOLG: Gratulation, Du hast die Aufgabe erfolgreich abgeschlossen um {d
 
 
 ```java runnable
+import java.util.Date;
+
 public class Main {
   public static int loesung(int N) {
     /* ----------------------------------- */
     /* - TODO: FÜGE DEINEN CODE HIER EIN - */
     /* ----------------------------------- */
-    int result = N;
-
-    return result
+    int result = 0;
+    String numString = Integer.toString(N);
+    for (int i=0; i<numString.length(); i++) {
+        result += Integer.parseInt(numString.substring(i,i+1));
+    }
+    return result;
   }
 
   public static void main(String[] args) {
 
     int[] INPUTS = {12, 56, 2025, 8, 0, 9999, 17112025};
-    int[] CHECKS = {1656302624, 3832185857, 3205138698, 2846111786, 3158815156, 3540719418, 3071405752};
+    int[] CHECKS = {48690, 1632385, 47655768, 1792, 1536, 1686256803, -151278289};
 
-    for (int i=0; i<INPUTS.lnght(); i++) {
+    for (int i=0; i<INPUTS.length; i++) {
         int N = INPUTS[i];
         int check = CHECKS[i];
-        int result = loesung(N)
-        int chk = Integer.toString(N)+Integer.toString(result).hashCode();
-        System.out.println(chk);
+        int result = loesung(N);
+        int chk = (Integer.toString(N)+Integer.toString(result)).hashCode();
+        // System.out.println(chk);
         if (chk == check) {
             System.out.println("RICHTIG: Die Quersumme von "+N+" ist "+result);
         }
         else {
             System.err.println("FALSCH: Die Quersumme von "+N+" ist nicht "+result);
-            System.exit(1)
+            System.exit(1);
         }    
-    System.out.println("------------------------------------------------------------")
-    System.out.println(f"ERFOLG: Gratulation, Du hast die Aufgabe erfolgreich abgeschlossen um "+new Date().toString());
+    }
+    System.out.println("------------------------------------------------------------");
+    System.out.println("ERFOLG: Gratulation, Du hast die Aufgabe erfolgreich abgeschlossen um "+new Date().toString());
   }
-
 }
 ```
