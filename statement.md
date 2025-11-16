@@ -132,3 +132,23 @@ console.log('Hello World!');
 ```
 
 
+## C# (Work in Progress)
+
+```C# runnable
+// { autofold
+using System;
+
+class Hello 
+{
+    static void Main() 
+    {
+// }
+
+Console.WriteLine("Hello World!");
+
+// { autofold
+    }
+}
+// }
+```
+
