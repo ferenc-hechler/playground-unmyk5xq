@@ -5,7 +5,7 @@ Für eine gegebene Nummer `N` berechne die **Quersumme**.
 The Quersumme wird berechnet, indem alle Ziffern der Zahl aufsumiert werden.
 Zum Beispiel hat `2025` die Quersumme `9`, da `2+0+2+5 = 9` ist.
 
-Implementiere die Methode loesung(N) im Code und klicke anschliessend den "Run" Button unten um die Testfälle laufen zu lassen.
+Implementiere die Methode loesung(N) im Code und Klicke anschliessend den "Run" Button unten um die Testfälle laufen zu lassen.
 
 **Einschränkungen:**
 0 ≤ N ≤ 1000000000
@@ -34,17 +34,17 @@ import hashlib
 from datetime import datetime, timedelta
 
 for N, check in zip(INPUTS, CHECKS):
-    result = solution(N)
+    result = loesung(N)
     chk = hashlib.md5(f"{N}{result}".encode()).digest()
     chk = (((chk[3]<<8)+chk[2]<<8)+chk[1]<<8)+chk[0]
     #print(chk)
     if chk == check:
-        print(f'GOOD: Digital Root for {N} is {result}')
+        print(f'GUT: Quersumme von {N} ist {result}')
     else:
-        print(f'FAIL: Digital Root for {N} is not {result}', file=sys.stderr)
+        print(f'FEHLER: Quersumme von {N} ist nicht {result}', file=sys.stderr)
         sys.exit(1)
         
 print("------------------------------------------------------------")
-print(f"SUCCESS: congratulations, you solved the riddle at {datetime.now()+ timedelta(hours=1)}")
+print(f"ERFOLG: Gratulation, Du hast die Aufgabe erfolgreich abgeschlossen um {datetime.now()+ timedelta(hours=1)}")
 
 ```
