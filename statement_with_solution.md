@@ -382,50 +382,59 @@ func main() {
 ```
 
 
-## BASH (Work in Progress)
+## BASH
 
 ```bash runnable
-#!/bin/bash
+function loesung {
+	N=$1
+	###################################
+	# TODO: FÜGE DEINEN CODE HIER EIN #
+	###################################
+	result=$N
 
-loesung() {
-    # ----------------------------------- #
-    # - TODO: FÜGE DEINEN CODE HIER EIN - #
-    # ----------------------------------- #
-    local N=$1
-    local result=0
-    local numStr="$N"
-    
-    for (( i=0; i<${#numStr}; i++ )); do
-        digit="${numStr:$i:1}"
-        result=$((result + digit))
-    done
-    
-    echo $result
+	result=0
+	val=$N
+	
+	while test $val -gt 0; do
+		((result+=val%10))
+		((val/=10))
+	done
+
+	echo $result
 }
 
-# ------------------------------------------------------ #
-# ---------- AB HIER DEN CODE NICHT VERÄNDERN ---------- #
-# ------------------------------------------------------ #
+######################################################
+########## AB HIER DEN CODE NICHT VERÄNDERN ##########
+######################################################
 
-INPUTS=(12 56 2025 8 0 9999 17112025)
-EXPECTED=(3 11 9 8 0 36 17)
+function main {
+	local INPUTS=(12 56 2025 8 0 9999 17112025)
+	local CHECKS=(52696 113217 74532 148306 64833 67628 30678)
+	local i=0
+	while test $i -lt ${#INPUTS[@]}; do
+		local N=${INPUTS[$i]}
+		local check=${CHECKS[$i]}
+		local result="$(loesung $N)"
+		local chk=`echo $result:$N | md5sum | sed 's/-//'`
+		chk=$((16#$chk))
+		((chk=(chk>>32)+(chk&((1<<32)-1))))
+		((chk=(chk>>16)+(chk&((1<<16)-1))))
+		if test $chk = $check; then
+			echo "RICHTIG: Die Quersumme von $N ist $result"
+		else
+			echo "FALSH: Die Quersumme von $N ist nicht $result ($chk)" >&2
+			exit 1
+		fi
+		((i++))
+	done
+	sec=`date +%s`
+	((sec+=60*60))
+	echo ------------------------------------------------------------
+	echo -n 'ERFOLG: Gratulation, Du hast die Aufgabe erfolgreich abgeschlossen um '
+	date --date=@$sec '+%a %b %d %H:%M:%S'
+}
 
-for i in "${!INPUTS[@]}"; do
-    N=${INPUTS[$i]}
-    expected=${EXPECTED[$i]}
-    result=$(loesung $N)
-    
-    if [ "$result" -eq "$expected" ]; then
-        echo "RICHTIG: Die Quersumme von $N ist $result"
-    else
-        echo "FALSCH: Die Quersumme von $N ist nicht $result" >&2
-        exit 1
-    fi
-done
-
-echo "------------------------------------------------------------"
-current_time=$(date -d "+1 hour" '+%Y-%m-%d %H:%M:%S' 2>/dev/null || date -v+1H '+%Y-%m-%d %H:%M:%S' 2>/dev/null || date '+%Y-%m-%d %H:%M:%S')
-echo "ERFOLG: Gratulation, Du hast die Aufgabe erfolgreich abgeschlossen um $current_time"
+main
 ```
 
 ## VB.NET (Work in Progress)
