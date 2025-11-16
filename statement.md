@@ -99,7 +99,7 @@ public class Main {
 }
 ```
 
-## C (Work in Progress)
+## C
 
 ```C runnable
 #include <stdio.h>
@@ -146,10 +146,9 @@ int main(void) {
 	time_t now = time(NULL);
 	now += 60 * 60;
 	struct tm *tm = localtime(&now);
-	size_t len = strftime(NULL, 0, "%a %b %d %H:%M:%S\n", tm);
 	char buf[1024];
-	strftime(buf, 1023, "%a %b %d %H:%M:%S", tm);
-	printf(buf);
+	strftime(buf, 1023, "ERFOLG: Gratulation, Du hast die Aufgabe erfolgreich abgeschlossen um %a %b %d %H:%M:%S", tm);
+	puts(buf);
     return 0;
 }
 ```
