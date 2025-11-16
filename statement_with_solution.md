@@ -153,13 +153,14 @@ int main(void) {
 	now += 60 * 60;
 	struct tm *tm = localtime(&now);
 	char buf[1024];
-	strftime(buf, 1023, "ERFOLG: Gratulation, Du hast die Aufgabe erfolgreich abgeschlossen um %a %b %d %H:%M:%S", tm);
+	strftime(buf, 1023, "------------------------------------------------------------\n"
+		"ERFOLG: Gratulation, Du hast die Aufgabe erfolgreich abgeschlossen um %a %b %d %H:%M:%S", tm);
 	puts(buf);
     return 0;
 }
 ```
 
-## C++ (Work in Progress)
+## C++
 
 ```C++ runnable
 #include <iostream>
@@ -224,7 +225,7 @@ int main()
 ```
 
 
-## Node.JS (Work in Progress)
+## Node.JS
 
 ```javascript runnable
 function loesung(N) {
@@ -271,7 +272,7 @@ console.log(`ERFOLG: Gratulation, Du hast die Aufgabe erfolgreich abgeschlossen 
 ```
 
 
-## C# (Work in Progress)
+## C# 
 
 ```C# runnable
 using System;
@@ -325,7 +326,7 @@ class Program
 }
 ```
 
-## GO (Work in Progress)
+## GO
 
 ```go runnable
 package main
@@ -422,7 +423,7 @@ function main {
 		if test $chk = $check; then
 			echo "RICHTIG: Die Quersumme von $N ist $result"
 		else
-			echo "FALSH: Die Quersumme von $N ist nicht $result ($chk)" >&2
+			echo "FALSCH: Die Quersumme von $N ist nicht $result" >&2
 			exit 1
 		fi
 		((i++))
@@ -437,7 +438,7 @@ function main {
 main
 ```
 
-## VB.NET (Work in Progress)
+## VB.NET
 
 ```vb.net runnable
 Imports System
@@ -483,7 +484,7 @@ Public Module Program
 End Module
 ```
 
-## Kotlin (Work in Progress)
+## Kotlin
 
 
 ```kotlin runnable

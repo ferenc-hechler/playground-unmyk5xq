@@ -145,7 +145,8 @@ int main(void) {
 	now += 60 * 60;
 	struct tm *tm = localtime(&now);
 	char buf[1024];
-	strftime(buf, 1023, "ERFOLG: Gratulation, Du hast die Aufgabe erfolgreich abgeschlossen um %a %b %d %H:%M:%S", tm);
+	strftime(buf, 1023, "------------------------------------------------------------\n"
+		"ERFOLG: Gratulation, Du hast die Aufgabe erfolgreich abgeschlossen um %a %b %d %H:%M:%S", tm);
 	puts(buf);
     return 0;
 }
@@ -317,7 +318,6 @@ import (
 	"encoding/binary"
 	"fmt"
 	"os"
-	"strconv"
 	"time"
 )
 
@@ -392,7 +392,7 @@ function main {
 		if test $chk = $check; then
 			echo "RICHTIG: Die Quersumme von $N ist $result"
 		else
-			echo "FALSH: Die Quersumme von $N ist nicht $result ($chk)" >&2
+			echo "FALSCH: Die Quersumme von $N ist nicht $result" >&2
 			exit 1
 		fi
 		((i++))
