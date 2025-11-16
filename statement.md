@@ -10,6 +10,12 @@ Implementiere die Methode `loesung(N)` im Code und klicke anschliessend den "Run
 **Bedingungen:**  
 0 ≤ N ≤ 1000000000
 
+
+Suche die dür dich passende Programmiersprache aus:
+
+## PYTHON
+
+
 ```python runnable
 
 def loesung(N:int):
@@ -46,4 +52,41 @@ for N, check in zip(INPUTS, CHECKS):
 print("------------------------------------------------------------")
 print(f"ERFOLG: Gratulation, Du hast die Aufgabe erfolgreich abgeschlossen um {datetime.now()+ timedelta(hours=1)}")
 
+```
+
+
+```java runnable
+public class Main {
+  public static int loesung(int N) {
+    /* ----------------------------------- */
+    /* - TODO: FÜGE DEINEN CODE HIER EIN - */
+    /* ----------------------------------- */
+    int result = N;
+
+    return result
+  }
+
+  public static void main(String[] args) {
+
+    int[] INPUTS = {12, 56, 2025, 8, 0, 9999, 17112025};
+    int[] CHECKS = {1656302624, 3832185857, 3205138698, 2846111786, 3158815156, 3540719418, 3071405752};
+
+    for (int i=0; i<INPUTS.lnght(); i++) {
+        int N = INPUTS[i];
+        int check = CHECKS[i];
+        int result = loesung(N)
+        int chk = Integer.toString(N)+Integer.toString(result).hashCode();
+        System.out.println(chk);
+        if (chk == check) {
+            System.out.println("RICHTIG: Die Quersumme von "+N+" ist "+result);
+        }
+        else {
+            System.err.println("FALSCH: Die Quersumme von "+N+" ist nicht "+result);
+            System.exit(1)
+        }    
+    System.out.println("------------------------------------------------------------")
+    System.out.println(f"ERFOLG: Gratulation, Du hast die Aufgabe erfolgreich abgeschlossen um "+new Date().toString());
+  }
+
+}
 ```
