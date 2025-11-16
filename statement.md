@@ -57,19 +57,21 @@ print(f"ERFOLG: Gratulation, Du hast die Aufgabe erfolgreich abgeschlossen um {d
 
 ```java runnable
 import java.util.Date;
-
 public class Main {
   public static int loesung(int N) {
     /* ----------------------------------- */
     /* - TODO: FÜGE DEINEN CODE HIER EIN - */
     /* ----------------------------------- */
-    int result = 0;
-    String numString = Integer.toString(N);
-    for (int i=0; i<numString.length(); i++) {
-        result += Integer.parseInt(numString.substring(i,i+1));
-    }
+    int result = N;
+
+
     return result;
   }
+
+
+  /* ------------------------------------------------------ */
+  /* ---------- AB HIER DEN CODE NICHT VERÄNDERN ---------- */
+  /* ------------------------------------------------------ */
 
   public static void main(String[] args) {
 
