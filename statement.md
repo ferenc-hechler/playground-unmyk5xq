@@ -437,15 +437,15 @@ Public Module Program
             Dim chk As Integer = (N.ToString() + result.ToString()).GetHashCode()
             
             If chk = check Then
-                Console.WriteLine($"RICHTIG: Die Quersumme von {N} ist {result}")
+                Console.WriteLine("RICHTIG: Die Quersumme von "+N.ToString()+" ist "+result.ToString())
             Else
-                Console.Error.WriteLine($"FALSCH: Die Quersumme von {N} ist nicht {result}")
+                Console.Error.WriteLine("FALSCH: Die Quersumme von "+N.ToString()+" ist nicht "+result.ToString())
                 Environment.Exit(1)
             End If
         Next
         
         Console.WriteLine("------------------------------------------------------------")
-        Console.WriteLine($"ERFOLG: Gratulation, Du hast die Aufgabe erfolgreich abgeschlossen um {DateTime.Now.AddHours(1)}")
+        Console.WriteLine("ERFOLG: Gratulation, Du hast die Aufgabe erfolgreich abgeschlossen um "+DateTime.Now.AddHours(1).ToString())
     End Sub
 End Module
 ```
