@@ -152,3 +152,44 @@ Console.WriteLine("Hello World!");
 // }
 ```
 
+## GO (Work in Progress)
+
+```go runnable
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello World!")
+}
+```
+
+
+## BASH (Work in Progress)
+
+
+```bash runnable
+echo "Hello World!"
+```
+
+## VB.NET (Work in Progress)
+
+```vb.net runnable
+Imports System
+
+Public Module modmain
+   Sub Main()
+     Console.WriteLine ("Hello World!")
+   End Sub
+End Module
+```
+
+## Kotlin (Work in Progress)
+
+
+```kotlin runnable
+fun main(args: Array<String>) {
+    println("Hello, World!")
+}
+```
+
