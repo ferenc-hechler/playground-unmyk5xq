@@ -104,21 +104,11 @@ public class Main {
 ```C runnable
 #include <stdio.h>
 #include <stdlib.h>
-
 static int loesung(unsigned N) {
     /* ----------------------------------- */
     /* - TODO: FÜGE DEINEN CODE HIER EIN - */
     /* ----------------------------------- */
     unsigned result = N;
-
-    // TODO begin remove
-    result = 0;
-    unsigned val = N;
-    while (val > 0) {
-        result += val % 10;
-        val /= 10;
-    }
-    // TODO end remove
 
 
     return result;
