@@ -104,6 +104,7 @@ public class Main {
 ```C runnable
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 static int loesung(unsigned N) {
     /* ----------------------------------- */
     /* - TODO: FÜGE DEINEN CODE HIER EIN - */
@@ -142,6 +143,13 @@ int main(void) {
              return 1;
          }
     }
+	time_t now = time(NULL);
+	now += 60 * 60;
+	struct tm *tm = localtime(&now);
+	size_t len = strftime(NULL, 0, "%a %b %d %H:%M:%S\n", tm);
+	char buf[1024];
+	strftime(buf, 1023, "%a %b %d %H:%M:%S", tm);
+	printf(buf);
     return 0;
 }
 ```
