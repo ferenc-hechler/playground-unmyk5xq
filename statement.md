@@ -11,7 +11,7 @@ Implementiere die Methode `loesung(N)` im Code und klicke anschliessend den "Run
 0 ≤ N ≤ 1000000000
 
 
-Suche die dür dich passende Programmiersprache aus:
+Suche unten die dür dich passende Programmiersprache (Python/JAVA) aus:
 
 ## PYTHON
 
