@@ -37,9 +37,9 @@ for N, check in zip(INPUTS, CHECKS):
     chk = (((chk[3]<<8)+chk[2]<<8)+chk[1]<<8)+chk[0]
     #print(chk)
     if chk == check:
-        print(f'OK: Quersumme von {N} ist {result}')
+        print(f'RICHTIG: Die Quersumme von {N} ist {result}')
     else:
-        print(f'FEHLER: Quersumme von {N} ist nicht {result}', file=sys.stderr)
+        print(f'FALSCH: Die Quersumme von {N} ist nicht {result}', file=sys.stderr)
         sys.exit(1)
         
 print("------------------------------------------------------------")
