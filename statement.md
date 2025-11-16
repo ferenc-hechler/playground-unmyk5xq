@@ -148,7 +148,7 @@ int main(void) {
              printf("RICHTIG: Die Quersumme von %u ist %u\n", N, result);
          } else {
              // printf("FALSCH: Die Quersumme von %u ist nicht %u (%u)\n", N, result, chk);
-             printf("FALSCH: Die Quersumme von %u ist nicht %u (%u)\n", N, result, chk);
+             printf("FALSCH: Die Quersumme von %u ist nicht %u\n", N, result);
              return 1;
          }
     }
