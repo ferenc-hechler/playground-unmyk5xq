@@ -462,7 +462,7 @@ Public Module Program
 
     Sub Main()
         Dim INPUTS() As Integer = {12, 56, 2025, 8, 0, 9999, 17112025}
-        Dim CHECKS() As Integer = {48690, 1632385, 47655768, 1792, 1536, 1686256803, -151278289}
+        Dim CHECKS() As Integer = {289116474, 1449066918, 202469091, -1193887400, 1479163514, 1399327101, 1342042333}
 
         For i As Integer = 0 To INPUTS.Length - 1
             Dim N As Integer = INPUTS(i)
