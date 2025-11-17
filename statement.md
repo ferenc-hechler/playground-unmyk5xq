@@ -1,4 +1,4 @@
-# Programmieraufgabe Quersumme Dezember 2025
+# Programmieraufgabe Quersumme
 
 Für eine gegebene Zahl `N` berechne die **Quersumme**.
 
