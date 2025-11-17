@@ -93,7 +93,7 @@ public class Main {
         }    
     }
     System.out.println("------------------------------------------------------------");
-    System.out.println("ERFOLG: Gratulation, Du hast die Aufgabe erfolgreich abgeschlossen um "+new Date().toString());
+    System.out.println("ERFOLG: Gratulation, Du hast die Aufgabe erfolgreich abgeschlossen um "+new Date(System.currentTimeMillis() + 1*3600000).toString());
   }
 }
 ```
