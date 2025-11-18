@@ -5,7 +5,7 @@ Für eine gegebene Zahl `N` berechne die **Quersumme**.
 Die Quersumme wird berechnet, indem alle Ziffern der Zahl aufaddiert werden.  
 Zum Beispiel hat `2025` die Quersumme `9`, da `2+0+2+5 = 9` ist.
 
-Implementiere die Methode `loesung(N)` im Code unten in der Programmiersprache Deiner Wahl (Python/Java/C) 
+Implementiere die Methode `loesung(N)` im Code unten in der Programmiersprache Deiner Wahl (Python/Java/C/...) 
 und klicke anschliessend den "Run" Button unter dem Code um die Testfälle laufen zu lassen.
 
 **Bedingungen:**  
